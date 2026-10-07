@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillStream AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>SkillStream AI</h1>
+    <p>Your AI-powered learning companion for TV</p>
+</header>
+
+<main>
+
+    <!-- HOME -->
+    <section id="home" class="screen active">
+        <h2>Learn Something New</h2>
+        <p>Choose a topic and start your interactive lesson.</p>
+
+        <button onclick="startLearning()">
+            Start Learning
+        </button>
+    </section>
+
+
+    <!-- TOPICS -->
+    <section id="topics" class="screen">
+        <h2>Choose a Topic</h2>
+
+        <div class="topic-grid">
+            <button onclick="openTopic('Python')">
+                Python
+            </button>
+
+            <button onclick="openTopic('Java')">
+                Java
+            </button>
+
+            <button onclick="openTopic('AI')">
+                Artificial Intelligence
+            </button>
+        </div>
+
+        <button class="back-button" onclick="goHome()">
+            Back
+        </button>
+    </section>
+
+
+    <!-- LESSON -->
+    <section id="lesson" class="screen">
+        <h2 id="lessonTitle">Lesson</h2>
+
+        <p id="lessonText"></p>
+
+        <button onclick="startQuiz()">
+            Take Quiz
+        </button>
+
+        <button class="back-button" onclick="showScreen('topics')">
+            Back
+        </button>
+    </section>
+
+
+    <!-- QUIZ -->
+    <section id="quiz" class="screen">
+        <h2>Quick Quiz</h2>
+
+        <p id="question"></p>
+
+        <div id="options"></div>
+
+        <button class="back-button" onclick="showScreen('lesson')">
+            Back
+        </button>
+    </section>
+
+
+    <!-- PROGRESS -->
+    <section id="progress" class="screen">
+        <h2>Your Progress</h2>
+
+        <p id="score">Quiz Score: 0</p>
+
+        <p id="topicCompleted">
+            Completed Topic: -
+        </p>
+
+        <button onclick="goHome()">
+            Back to Home
+        </button>
+    </section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>

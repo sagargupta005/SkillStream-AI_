@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+    min-height: 100vh;
+}
+
+header {
+    padding: 30px 60px;
+    background: #111a33;
+    border-bottom: 2px solid #26345f;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 20px;
+    color: #b9c2d9;
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 120px);
+}
+
+.screen {
+    display: none;
+    min-height: calc(100vh - 120px);
+    padding: 70px 100px;
+}
+
+.screen.active {
+    display: block;
+}
+
+.screen h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.screen p {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #d4dbed;
+    max-width: 900px;
+    margin-bottom: 35px;
+}
+
+button {
+    background: #1d6cff;
+    color: white;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    padding: 20px 35px;
+    margin: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 220px;
+    transition: transform 0.15s ease;
+}
+
+button:hover {
+    transform: scale(1.04);
+}
+
+button:focus {
+    outline: none;
+    border: 3px solid white;
+    transform: scale(1.06);
+}
+
+.topic-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.topic-grid button {
+    min-width: 260px;
+    min-height: 120px;
+}
+
+.quiz-option {
+    display: block;
+    width: 500px;
+    text-align: left;
+    margin: 15px 0;
+}
+
+.back-button {
+    background: #39445f;
+}
+
+#options {
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .screen {
+        padding: 40px;
+    }
+
+    header {
+        padding: 25px 40px;
+    }
+
+    button {
+        font-size: 20px;
+    }
+
+    .quiz-option {
+        width: 100%;
+    }
+}
