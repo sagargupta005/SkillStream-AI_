@@ -10,95 +10,180 @@
 <body>
 
 <header>
-    <h1>SkillStream AI</h1>
-    <p>Your AI-powered learning companion for TV</p>
+    <div class="brand">
+        <h1>SkillStream AI</h1>
+        <p>Interactive Learning for the Big Screen</p>
+    </div>
+    <div class="tv-badge">TV LEARNING</div>
 </header>
 
 <main>
 
     <!-- HOME -->
     <section id="home" class="screen active">
-        <h2>Learn Something New</h2>
-        <p>Choose a topic and start your interactive lesson.</p>
+        <div class="hero">
+            <span class="eyebrow">WELCOME</span>
+            <h2>Learn Something New</h2>
+            <p>
+                Explore interactive lessons, test your knowledge,
+                and track your learning progress.
+            </p>
 
-        <button onclick="startLearning()">
-            Start Learning
-        </button>
+            <button class="primary-button focusable"
+                    onclick="startLearning()">
+                Start Learning
+            </button>
+        </div>
     </section>
 
 
     <!-- TOPICS -->
     <section id="topics" class="screen">
-        <h2>Choose a Topic</h2>
 
-        <div class="topic-grid">
-            <button onclick="openTopic('Python')">
-                Python
-            </button>
-
-            <button onclick="openTopic('Java')">
-                Java
-            </button>
-
-            <button onclick="openTopic('AI')">
-                Artificial Intelligence
-            </button>
+        <div class="screen-heading">
+            <span class="eyebrow">STEP 1</span>
+            <h2>Choose a Topic</h2>
+            <p>Select a subject to begin your lesson.</p>
         </div>
 
-        <button class="back-button" onclick="goHome()">
+        <div class="topic-grid">
+
+            <button class="topic-card focusable"
+                    onclick="openTopic('Python')">
+                <span class="topic-icon">PY</span>
+                <span class="topic-name">Python</span>
+                <span class="topic-description">
+                    Programming fundamentals
+                </span>
+            </button>
+
+            <button class="topic-card focusable"
+                    onclick="openTopic('Java')">
+                <span class="topic-icon">JA</span>
+                <span class="topic-name">Java</span>
+                <span class="topic-description">
+                    Object-oriented programming
+                </span>
+            </button>
+
+            <button class="topic-card focusable"
+                    onclick="openTopic('AI')">
+                <span class="topic-icon">AI</span>
+                <span class="topic-name">Artificial Intelligence</span>
+                <span class="topic-description">
+                    Introduction to AI concepts
+                </span>
+            </button>
+
+        </div>
+
+        <button class="secondary-button focusable"
+                onclick="goHome()">
             Back
         </button>
+
     </section>
 
 
     <!-- LESSON -->
     <section id="lesson" class="screen">
-        <h2 id="lessonTitle">Lesson</h2>
 
-        <p id="lessonText"></p>
+        <div class="lesson-container">
 
-        <button onclick="startQuiz()">
-            Take Quiz
-        </button>
+            <span class="eyebrow">STEP 2 · LESSON</span>
 
-        <button class="back-button" onclick="showScreen('topics')">
-            Back
-        </button>
+            <h2 id="lessonTitle">Lesson</h2>
+
+            <div class="lesson-card">
+                <p id="lessonText"></p>
+            </div>
+
+            <div class="button-row">
+
+                <button class="primary-button focusable"
+                        onclick="startQuiz()">
+                    Take Quiz
+                </button>
+
+                <button class="secondary-button focusable"
+                        onclick="showScreen('topics')">
+                    Back
+                </button>
+
+            </div>
+
+        </div>
+
     </section>
 
 
     <!-- QUIZ -->
     <section id="quiz" class="screen">
-        <h2>Quick Quiz</h2>
 
-        <p id="question"></p>
+        <div class="quiz-container">
 
-        <div id="options"></div>
+            <span class="eyebrow">STEP 3 · QUIZ</span>
 
-        <button class="back-button" onclick="showScreen('lesson')">
-            Back
-        </button>
+            <h2>Quick Quiz</h2>
+
+            <div class="question-card">
+                <p id="question"></p>
+            </div>
+
+            <div id="options"></div>
+
+            <button class="secondary-button focusable"
+                    onclick="showScreen('lesson')">
+                Back to Lesson
+            </button>
+
+        </div>
+
     </section>
 
 
     <!-- PROGRESS -->
     <section id="progress" class="screen">
-        <h2>Your Progress</h2>
 
-        <p id="score">Quiz Score: 0</p>
+        <div class="progress-container">
 
-        <p id="topicCompleted">
-            Completed Topic: -
-        </p>
+            <span class="eyebrow">STEP 4 · PROGRESS</span>
 
-        <button onclick="goHome()">
-            Back to Home
-        </button>
+            <h2>Your Progress</h2>
+
+            <div class="progress-card">
+
+                <div class="progress-item">
+                    <span class="progress-label">QUIZ SCORE</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="progress-item">
+                    <span class="progress-label">COMPLETED TOPIC</span>
+                    <strong id="topicCompleted">-</strong>
+                </div>
+
+            </div>
+
+            <button class="primary-button focusable"
+                    onclick="goHome()">
+                Back to Home
+            </button>
+
+        </div>
+
     </section>
 
 </main>
+
+<footer>
+    <span>Use Arrow Keys to Navigate</span>
+    <span>OK / Enter to Select</span>
+    <span>Backspace / Escape to Go Back</span>
+</footer>
 
 <script src="app.js"></script>
 
 </body>
 </html>
+
